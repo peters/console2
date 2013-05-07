@@ -1,0 +1,3 @@
+[submodule "thirdparty/wtl"]
+	path = thirdparty/wtl
+	url = https://github.com/peters/wtl.git

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EA5C354-A242-49F3-88D1-559EACA7FB8A}</ProjectGuid>
+    <RootNamespace>Console</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60315.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\obj\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>F:\c++\boost_1_53_0;..\..\thirdparty\wtl\wtl\include;..\..\thirdparty\freeimage;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\obj\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)Console.tlb</TypeLibraryName>
+      <HeaderFileName>Console.h</HeaderFileName>
+      <DllDataFileName />
+      <InterfaceIdentifierFileName>Console_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Console_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\thirdparty\TabbingFramework;..\..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;_WTL_USE_VSSYM32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\thirdparty\freeimage\FreeImagePlus.lib;delayimp.lib;htmlhelp.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)Console.tlb</TypeLibraryName>
+      <HeaderFileName>Console.h</HeaderFileName>
+      <DllDataFileName />
+      <InterfaceIdentifierFileName>Console_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Console_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\thirdparty\TabbingFramework;..\..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);..\..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\FreeImage\x64\FreeImagePlus.lib;delayimp.lib;htmlhelp.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="AnimationWindow.cpp" />
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="ConsoleHandler.cpp" />
+    <ClCompile Include="ConsoleView.cpp" />
+    <ClCompile Include="Cursors.cpp" />
+    <ClCompile Include="DlgCredentials.cpp" />
+    <ClCompile Include="DlgRenameTab.cpp" />
+    <ClCompile Include="DlgSettingsAppearance.cpp" />
+    <ClCompile Include="DlgSettingsBehavior.cpp" />
+    <ClCompile Include="DlgSettingsConsole.cpp" />
+    <ClCompile Include="DlgSettingsHotkeys.cpp" />
+    <ClCompile Include="DlgSettingsMain.cpp" />
+    <ClCompile Include="DlgSettingsMouse.cpp" />
+    <ClCompile Include="DlgSettingsStyles.cpp" />
+    <ClCompile Include="DlgSettingsTabs.cpp" />
+    <ClCompile Include="Helpers.cpp" />
+    <ClCompile Include="ImageHandler.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="PageSettingsTabs1.cpp" />
+    <ClCompile Include="PageSettingsTabs2.cpp" />
+    <ClCompile Include="SelectionHandler.cpp" />
+    <ClCompile Include="SettingsHandler.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="XmlHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="AnimationWindow.h" />
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="ConsoleException.h" />
+    <ClInclude Include="ConsoleHandler.h" />
+    <ClInclude Include="ConsoleView.h" />
+    <ClInclude Include="Cursors.h" />
+    <ClInclude Include="DlgCredentials.h" />
+    <ClInclude Include="DlgRenameTab.h" />
+    <ClInclude Include="DlgSettingsAppearance.h" />
+    <ClInclude Include="DlgSettingsBase.h" />
+    <ClInclude Include="DlgSettingsBehavior.h" />
+    <ClInclude Include="DlgSettingsConsole.h" />
+    <ClInclude Include="DlgSettingsHotkeys.h" />
+    <ClInclude Include="DlgSettingsMain.h" />
+    <ClInclude Include="DlgSettingsMouse.h" />
+    <ClInclude Include="DlgSettingsStyles.h" />
+    <ClInclude Include="DlgSettingsTabs.h" />
+    <ClInclude Include="FastDelegate.h" />
+    <ClInclude Include="Helpers.h" />
+    <ClInclude Include="HotkeyEdit.h" />
+    <ClInclude Include="ImageHandler.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="PageSettingsTabs1.h" />
+    <ClInclude Include="PageSettingsTabs2.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SelectionHandler.h" />
+    <ClInclude Include="SettingsHandler.h" />
+    <ClInclude Include="..\shared\SharedMemNames.h" />
+    <ClInclude Include="..\shared\SharedMemory.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\shared\Structures.h" />
+    <ClInclude Include="XmlHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Console.ico" />
+    <Image Include="res\toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Console.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="console.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Console.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
