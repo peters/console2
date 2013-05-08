@@ -22,7 +22,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v110_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -45,11 +45,14 @@
     <IntDir>..\obj\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>F:\c++\boost_1_53_0;..\..\thirdparty\wtl\wtl\include;..\..\thirdparty\freeimage;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\c++\boost_1_53_0\lib\win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>..\obj\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>F:\c++\boost_1_53_0;..\..\thirdparty\wtl\wtl\include;..\..\thirdparty\freeimage;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\c++\boost_1_53_0\lib\win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -67,7 +70,7 @@
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\thirdparty\TabbingFramework;..\..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;_WTL_USE_VSSYM32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WINDOWS_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;STRICT;_DEBUG;_WTL_USE_VSSYM32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -89,17 +92,20 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MkTypLibCompatible>false</MkTypLibCompatible>
-      <TargetEnvironment>X64</TargetEnvironment>
       <GenerateStublessProxies>true</GenerateStublessProxies>
       <TypeLibraryName>$(IntDir)Console.tlb</TypeLibraryName>
       <HeaderFileName>Console.h</HeaderFileName>
-      <DllDataFileName />
+      <DllDataFileName>
+      </DllDataFileName>
       <InterfaceIdentifierFileName>Console_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>Console_p.c</ProxyFileName>
     </Midl>
@@ -107,27 +113,28 @@
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\thirdparty\TabbingFramework;..\..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WIN64;_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;STRICT;_DEBUG;_WTL_USE_VSSYM32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>$(IntDir);..\..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IntDir);..\thirdparty\wtl\trunk\wtl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>..\FreeImage\x64\FreeImagePlus.lib;delayimp.lib;htmlhelp.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\thirdparty\freeimage\FreeImagePlus.lib;delayimp.lib;htmlhelp.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention />
-      <TargetMachine>MachineX64</TargetMachine>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -147,6 +154,7 @@
     <ClCompile Include="DlgSettingsMouse.cpp" />
     <ClCompile Include="DlgSettingsStyles.cpp" />
     <ClCompile Include="DlgSettingsTabs.cpp" />
+    <ClCompile Include="GuakeHelper.cpp" />
     <ClCompile Include="Helpers.cpp" />
     <ClCompile Include="ImageHandler.cpp" />
     <ClCompile Include="MainFrame.cpp" />
@@ -180,6 +188,7 @@
     <ClInclude Include="DlgSettingsStyles.h" />
     <ClInclude Include="DlgSettingsTabs.h" />
     <ClInclude Include="FastDelegate.h" />
+    <ClInclude Include="GuakeHelper.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="HotkeyEdit.h" />
     <ClInclude Include="ImageHandler.h" />

@@ -57,10 +57,7 @@ extern CAppModule _Module;
 
 #include "CustomTabCtrl.h"
 #include "DotNetTabCtrl.h"
-//#include "SimpleTabCtrls.h"
-//#include "SimpleDlgTabCtrls.h"
 #include "TabbedFrame.h"
-//#include "TabbedMDI.h"
 #pragma warning(pop)
 
 #include <HtmlHelp.h>

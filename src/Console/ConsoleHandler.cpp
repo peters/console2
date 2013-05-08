@@ -536,8 +536,8 @@ bool ConsoleHandler::InjectHookDLL(PROCESS_INFORMATION& pi)
 			return false;
 		}
 
-		shared_ptr<void> wowProcess(piWow.hProcess, ::CloseHandle);
-		shared_ptr<void> wowThread(piWow.hThread, ::CloseHandle);
+		boost::shared_ptr<void> wowProcess(piWow.hProcess, ::CloseHandle);
+		boost::shared_ptr<void> wowThread(piWow.hThread, ::CloseHandle);
 
 		if (::WaitForSingleObject(wowProcess.get(), 5000) == WAIT_TIMEOUT)
 		{

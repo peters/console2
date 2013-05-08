@@ -171,7 +171,7 @@ int Run(LPTSTR lpstrCmdLine = NULL, int nCmdShow = SW_SHOWDEFAULT)
 	// create main window
 	NoTaskbarParent noTaskbarParent;
 	MainFrame wndMain(strWindowTitle, startupTabs, startupDirs, startupCmds, nMultiStartSleep, strDbgCmdLine);
-
+   
 	if (!g_settingsHandler->GetAppearanceSettings().stylesSettings.bTaskbarButton)
 	{
 		noTaskbarParent.Create(NULL);
@@ -191,7 +191,7 @@ int Run(LPTSTR lpstrCmdLine = NULL, int nCmdShow = SW_SHOWDEFAULT)
 
 	_Module.RemoveMessageLoop();
 
-	return nRet;
+	return nRet; 
 }
 
 //////////////////////////////////////////////////////////////////////////////
