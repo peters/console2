@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "../../shared/SharedMemNames.h"
+#include "../shared/SharedMemNames.h"
 #include "ConsoleHandler.h"
 
 //////////////////////////////////////////////////////////////////////////////

@@ -93,8 +93,8 @@ using namespace boost;
 using namespace boost::multi_index;
 #pragma warning(pop)
 
-#include "../../shared/SharedMemory.h"
-#include "../../shared/Structures.h"
+#include "../shared/SharedMemory.h"
+#include "../shared/Structures.h"
 
 #include "Helpers.h"
 #include "ConsoleHandler.h"

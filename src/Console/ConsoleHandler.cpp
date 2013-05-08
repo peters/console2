@@ -3,7 +3,7 @@
 #include "resource.h"
 #include "Console.h"
 
-#include "../../shared/SharedMemNames.h"
+#include "../shared/SharedMemNames.h"
 #include "ConsoleException.h"
 #include "ConsoleHandler.h"
 
